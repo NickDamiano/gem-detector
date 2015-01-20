@@ -7,5 +7,5 @@ get '/hi' do
 end
 
 get '/' do 
-  'Welcome to cool page city'
+  erb :index
 end
