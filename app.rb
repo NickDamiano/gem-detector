@@ -3,13 +3,12 @@ require 'sinatra'
 set :bind, '0.0.0.0' #vagrant stuff
 
 post '/gemfile' do 
-  puts params
-  erb :gemlist, :locals => {test: params['gemfile']}
+  redirect to('/gemfile?name=butthead')
 end
 
-# get '/gemfile' do 
-
-# end
+get '/gemfile' do 
+  puts name
+end
 
 get '/' do 
   erb :index
