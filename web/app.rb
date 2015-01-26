@@ -4,6 +4,7 @@ set :bind, '0.0.0.0' #vagrant stuff
 
 post '/gemfile' do 
   gems = params['gemfile']
+  GemfileLookup::Parse.run
   erb :result, :locals => {gemlist: gems}
 end
 
