@@ -3,7 +3,11 @@
 module GemfileLookup
   class Parse
     def self.run(gemfile)
-      p gemfile 
+      source_file = gemfile
+      parsed_file = source_file.gsub(/\r/, '').split(/\n/)
+      parsed_file.each do |line|
+        p line
+      end
       #data comes in like this source 
       #'https://rubygems.org'\r\n\r\ngem 'rspec',
       # '~> 2.14.1'\r\ngem 'pry-byebug'\r\ngem 'sinatra', require: 'sinatra/base'\r\ngem 
