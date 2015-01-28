@@ -3,10 +3,15 @@
 module GemfileLookup
   class Parse
     def self.run(gemfile)
+      result = ''
       source_file = gemfile
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
       parsed_file.each do |line|
-        p line
+        if line.start_with('Gem', 'gem', 'GEM')
+          gem_name = line.match(/'+\w+'/)
+          result.push(gem_name)
+          p gem_name
+        end
       end
       #data comes in like this source 
       #'https://rubygems.org'\r\n\r\ngem 'rspec',
