@@ -8,9 +8,16 @@ module GemfileLookup
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
       parsed_file.each do |line|
         if line.start_with?('Gem', 'gem', 'GEM')
-          gem_name = line.match(/'+\w+'/)
-          p gem_name
+          gem_name = line[/'+\w+'/].to_s
+          result.push(gem_name.to_s) unless gem_name.empty?
         end
+      end
+      result = result.map{ |gemname| gemname[1...-1] }
+      p result
+      if result.size == 0
+        return {success?: false, gems: []}
+      else
+        return {success?: true, gems: result}
       end
       #data comes in like this source 
       #'https://rubygems.org'\r\n\r\ngem 'rspec',

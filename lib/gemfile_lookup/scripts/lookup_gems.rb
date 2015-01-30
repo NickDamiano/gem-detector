@@ -5,3 +5,4 @@
 #gem information is stored in hash
 #hash is pushed into array
 #repeated
+
