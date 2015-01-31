@@ -14,9 +14,11 @@ module GemfileLookup
       p 'GEM LIST BELOW'
       p gem_list
       gem_list.each do |gem_name|
-        gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json")
+        gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json").read
         api_result.push(gem_info)
       end
+      p 'API RESULT FROM LOOKUP GEMS!!!'
+      p api_result
       return { success?: true, result: api_result }
     end
   end
