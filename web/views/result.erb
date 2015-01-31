@@ -1,1 +1,3 @@
-<%= gemlist %>
+<% gemlist.each do |gem_name| %>
+	<%= gem_name['info'] %>
+<% end %>
