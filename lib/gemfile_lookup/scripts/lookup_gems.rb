@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'json'
 #TODO 
 #gets an array of hashes with gem name and version number or possibly just a sub array. 
 #returns an array of hashes with all of the different information about each gem
@@ -15,10 +16,9 @@ module GemfileLookup
       p gem_list
       gem_list.each do |gem_name|
         gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json").read
-        api_result.push(gem_info)
+        gem_info_parsed = JSON.parse(gem_info)
+        api_result.push(gem_info_parsed)
       end
-      p 'API RESULT FROM LOOKUP GEMS!!!'
-      p api_result
       return { success?: true, result: api_result }
     end
   end
