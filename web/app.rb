@@ -7,8 +7,8 @@ set :bind, '0.0.0.0' #vagrant stuff
 post '/gemfile' do 
   gems = params['gemfile']
   result = GemfileLookup::Parse.run(gems)
-  api_return = GemfileLookup::RubyGemsCall.run(result)
-  erb :result, :locals => {gemlist: result}
+  api_return = GemfileLookup::RubyGemsCall.run(result[:gem_list])
+  erb :result, :locals => {gemlist: api_return[:api_result]}
 end
 
 get '/gemfile' do 

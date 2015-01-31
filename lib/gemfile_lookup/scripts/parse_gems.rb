@@ -17,7 +17,7 @@ module GemfileLookup
       if result.size == 0
         return {success?: false, gems: []}
       else
-        return {success?: true, gems: result}
+        return {success?: true, gem_list: result}
       end
       #data comes in like this source 
       #'https://rubygems.org'\r\n\r\ngem 'rspec',
