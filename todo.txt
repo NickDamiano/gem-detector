@@ -1,0 +1,5 @@
+1) Create an mvp for output results page
+2) Make api calls asynchronous
+3) Write tests
+4) Refactor 
+5) Create gem
