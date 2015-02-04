@@ -1,5 +1,6 @@
-1) Create an mvp for output results page
-2) Make api calls asynchronous
-3) Write tests
-4) Refactor 
-5) Create gem
+- Change the width of the results page container for full screen
+- Fix it so it doesn't break with a gem name not in rubygems.org (currently hitting 404 error and failing)
+- Make api calls asynchronous
+- Write tests
+- Refactor 
+- Create gem
