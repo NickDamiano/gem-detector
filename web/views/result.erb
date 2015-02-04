@@ -3,9 +3,17 @@
 	<div class='gem_info'>
 		<div class='gem_name'> <strong>Name:</strong> <%= gem_name['name'].capitalize %>
 		</div>
-		<!-- <div class='downloads'>
-			<strong>Downloads:</strong> <%= gem_name['downloads'] %> -->
-		<!-- </div> -->
+		<div class='summary'>
+			<strong>Summary:</strong> <%= gem_name['info'] %>
+		</div>
+	</div>
+	<% end %>
+	<h3 class='commented_title'>Commented Gems</h3>
+	<% commented_gems.each do |gem_name| %>
+	<div class='gem_info commented_gem'>
+		<div class='commented_gem_name'> 
+			<strong>Name:</strong> <%= gem_name['name'].capitalize %>
+		</div>
 		<div class='summary'>
 			<strong>Summary:</strong> <%= gem_name['info'] %>
 		</div>

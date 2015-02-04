@@ -8,7 +8,8 @@ post '/gemfile' do
   gems = params['gemfile']
   result = GemfileLookup::Parse.run(gems)
   api_return = GemfileLookup::RubyGemsCall.run(result[:gem_list])
-  erb :result, :locals => {gemlist: api_return[:result]}
+  commented_api_return = GemfileLookup::RubyGemsCall.run(result[:commented_gems])
+  erb :result, :locals => {gemlist: api_return[:result], commented_gems: commented_api_return[:result]}
 end
 
 get '/gemfile' do 

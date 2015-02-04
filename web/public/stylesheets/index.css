@@ -13,9 +13,24 @@ label{
 h1{
 	text-align: center;
 }
+
+.gem_container{
+	width: 75%;
+}
+
 .gem_info{
 	border: 1px solid;
 	padding: .5em;
 	font-size: 1em;
 	margin-bottom: .5em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.commented_gem{
+	background-color: #d3d3d3;
+}
+
+.commented_title{
+	text-align: center;
 }

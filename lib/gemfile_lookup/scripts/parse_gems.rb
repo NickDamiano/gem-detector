@@ -2,6 +2,7 @@ module GemfileLookup
   class Parse
     def self.run(source_file)
       result = []
+      commented_gems = []
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
       parsed_file.each do |line|
         if line.lstrip.start_with?('Gem', 'gem', 'GEM')
@@ -10,14 +11,23 @@ module GemfileLookup
           gem_name = gem_and_version[0]
           result.push(gem_name.to_s) unless gem_name.empty?
         end
+
+        if line.lstrip.downcase.start_with?('# gem')
+          p 'IN THE IF STATEMENT FOR COMMENTED'
+          gem_and_version =  line.lstrip[6..-1].split(',')
+          gem_name = gem_and_version[0][1...-1]
+          commented_gems.push(gem_name.to_s) unless gem_name.empty?
+        end
       end
 
       result = result.map{ |gemname| gemname[1...-1] }
       p result
+      p 'commented gems!!!!!!!!!'
+      p commented_gems
       if result.size == 0
-        return {success?: false, gems: []}
+        return { success?: false, gem_list: [], commented_gems: [] }
       else
-        return {success?: true, gem_list: result}
+        return { success?: true, gem_list: result, commented_gems: commented_gems }
       end
     end
   end
