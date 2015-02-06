@@ -6,6 +6,12 @@ textarea{
 	margin-top:1em;
 	padding:1em;
 }
+a{
+	text-decoration: none;
+	color: black;
+	font-family: Verdana;
+	text-align: center;
+}
 label{
 	display:block;
 	text-align:center;
@@ -17,7 +23,9 @@ h1{
 }
 
 .gem_container{
-
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .gem_info{
@@ -36,4 +44,10 @@ h1{
 
 .commented_title{
 	text-align: center;
+}
+
+@media (max-width: 800px) {
+  .gem_container {
+    width: 90%;
+  }
 }

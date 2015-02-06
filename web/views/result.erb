@@ -8,7 +8,12 @@
 		</div>
 	</div>
 	<% end %>
-	<h3 class='commented_title'>Commented Gems</h3>
+	<% if commented_gems.empty? %>
+		<% commented_gems_title = '' %>
+	<% else %>
+		<% commented_gems_title = 'Commented Gems' %>
+	<% end %>
+	<h3 class='commented_title'><%= commented_gems_title %></h3>
 	<% commented_gems.each do |gem_name| %>
 	<div class='gem_info commented_gem'>
 		<div class='commented_gem_name'> 
