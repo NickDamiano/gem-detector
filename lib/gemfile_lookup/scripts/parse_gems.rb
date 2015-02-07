@@ -12,9 +12,11 @@ module GemfileLookup
           result.push(gem_name.to_s) unless gem_name.empty?
         end
 
-        if line.lstrip.downcase.start_with?('# gem')
-          p 'IN THE IF STATEMENT FOR COMMENTED'
-          gem_and_version =  line.lstrip[6..-1].split(',')
+        line = line.lstrip.downcase
+        if line.start_with?('# gem') || line.start_with?('#gem')
+          #get rid of the # and then strip any white space. then start the index from 1
+          line = line[1..-1].lstrip
+          gem_and_version =  line[4..-1].split(',')
           gem_name = gem_and_version[0][1...-1]
           commented_gems.push(gem_name.to_s) unless gem_name.empty?
         end

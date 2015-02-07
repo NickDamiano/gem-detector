@@ -3,3 +3,4 @@
 - Write tests
 - Refactor 
 - Create gem
+- css didn't update with deployment update - fix
