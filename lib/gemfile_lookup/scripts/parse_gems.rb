@@ -13,7 +13,7 @@ module GemfileLookup
         end
 
         line = line.lstrip.downcase
-        if line =~ /#.*gem/
+        if line =~ /#\s*gem/
           #get rid of the # and then strip any white space. then start the index from 1
           line = line[1..-1].lstrip
           gem_and_version =  line[4..-1].split(',')
