@@ -38,6 +38,10 @@ h1{
 	font-family: Verdana;
 }
 
+.not_found{
+	background-color: #CC6600;
+}
+
 .commented_gem{
 	background-color: #d3d3d3;
 }
