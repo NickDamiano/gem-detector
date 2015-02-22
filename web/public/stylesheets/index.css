@@ -39,7 +39,13 @@ h1{
 }
 
 .not_found{
-	background-color: #CC6600;
+	border: 1.5px dashed;
+	padding: .5em;
+	font-size: 1em;
+	margin-bottom: .5em;
+	margin-left: 1em;
+	margin-right: 1em;
+	font-family: Verdana;
 }
 
 .commented_gem{

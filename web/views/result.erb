@@ -1,7 +1,7 @@
 <div class= 'gem_container'>
 	<% gemlist.each do |gem_name| %>
 	<% if gem_name['info'] == 'Gem not found at rubygems.org' %>
-		<% class_name = 'not_found gem_info' %>
+		<% class_name = 'not_found' %>
 	<% else %>
 		<% class_name = 'gem_info' %>
 	<% end %>
