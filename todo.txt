@@ -1,4 +1,10 @@
-- Make api calls asynchronous
+- Make api calls asynchronous - IMPORTANT
+- Prevent duplicate gems from being called
+- Add hyper link paste field or you can make it where you paste the hyper link in the same field, and it parses 
+whether or not it's rubygems or if it's a github hyperlink, or github or the other one. 
+ 	- add class that grabs the gemfile, 
+ 	- call existing methods
+
 - Write tests
 - Refactor 
 - Create gem
@@ -6,3 +12,5 @@
   - console menu type interface to mouse through gems installed and get more info
 - Fix where it parses a non-commented gem that doesn't have a space following the word gem. someone put gemspec and it grabbed the e out of that word and called it.
 - Write short readme
+
+DO ALL OF THIS BY SUNDAY EVENING AND START ON JAVASCRIPT SPOTIFY PROGRAM

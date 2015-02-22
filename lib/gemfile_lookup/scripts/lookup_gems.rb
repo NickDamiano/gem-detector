@@ -9,8 +9,10 @@ module GemfileLookup
   class RubyGemsCall
     def self.run(gem_list)
       api_result = []
-
+      thread_list = []
+      gem_info_parsed = ''
       gem_list.each do |gem_name|
+        thread_list << Thread.new do 
           begin
             gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json").read
             rescue OpenURI::HTTPError 
@@ -19,6 +21,8 @@ module GemfileLookup
             gem_info_parsed = JSON.parse(gem_info) unless gem_info.nil?
             api_result.push(gem_info_parsed) unless gem_info_parsed.nil?
         end
+      end
+      thread_list.each { |thread| thread.join }
       return { success?: true, result: api_result }
     end
   end
