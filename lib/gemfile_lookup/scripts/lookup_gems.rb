@@ -16,9 +16,7 @@ module GemfileLookup
           begin
             gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json").read
             rescue OpenURI::HTTPError 
-              p 'RESCUE RESCUE RESCUE !!!!!!!!!'
               api_result.push({"name" => gem_name, "info" => "Gem not found at rubygems.org"})
-              p 'API RESULT'
               api_result
           end
             gem_info_parsed = JSON.parse(gem_info) unless gem_info.nil?
@@ -26,6 +24,7 @@ module GemfileLookup
         end
       end
       thread_list.each { |thread| thread.join }
+      api_result = api_result.sort_by { |item| item["name"] }
       return { success?: true, result: api_result }
     end
   end

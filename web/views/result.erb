@@ -1,10 +1,11 @@
 <div class= 'gem_container'>
 	<% gemlist.each do |gem_name| %>
 	<% if gem_name['info'] == 'Gem not found at rubygems.org' %>
-		<% class_name = 'gem_info not_found' %>
+		<% class_name = 'not_found gem_info' %>
 	<% else %>
 		<% class_name = 'gem_info' %>
 	<% end %>
+	<% p class_name %>
 	<div class=<%= class_name %> >
 		<div class='gem_name'> <strong>Name:</strong> <%= gem_name['name'].capitalize %>
 		</div>
@@ -20,8 +21,6 @@
 	<% end %>
 	<h3 class='commented_title'><%= commented_gems_title %></h3>
 	<% commented_gems.each do |gem_name| %>
-	<% p gem_name %>
-	<% p 'commented gem name above' %>
 	<div class='gem_info commented_gem'>
 		<div class='commented_gem_name'> 
 			<strong>Name:</strong> <%= gem_name['name'].capitalize %>
