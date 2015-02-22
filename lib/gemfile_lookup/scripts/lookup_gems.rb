@@ -25,6 +25,7 @@ module GemfileLookup
       end
       thread_list.each { |thread| thread.join }
       api_result = api_result.sort_by { |item| item["name"] }
+      api_result = api_result.uniq
       return { success?: true, result: api_result }
     end
   end
