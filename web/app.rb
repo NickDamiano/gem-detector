@@ -9,7 +9,8 @@ post '/gemfile' do
   result = GemfileLookup::Parse.run(gems)
   api_return = GemfileLookup::RubyGemsCall.run(result[:gem_list])
   commented_api_return = GemfileLookup::RubyGemsCall.run(result[:commented_gems])
-  p api_return
+  p commented_api_return 
+  p 'commented api return above me'
   erb :result, :locals => {gemlist: api_return[:result], commented_gems: commented_api_return[:result]}
 end
 

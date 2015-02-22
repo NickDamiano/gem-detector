@@ -10,13 +10,16 @@ module GemfileLookup
     def self.run(gem_list)
       api_result = []
       thread_list = []
-      gem_info_parsed = ''
+      gem_info_parsed = nil
       gem_list.each do |gem_name|
         thread_list << Thread.new do 
           begin
             gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json").read
             rescue OpenURI::HTTPError 
+              p 'RESCUE RESCUE RESCUE !!!!!!!!!'
               api_result.push({"name" => gem_name, "info" => "Gem not found at rubygems.org"})
+              p 'API RESULT'
+              api_result
           end
             gem_info_parsed = JSON.parse(gem_info) unless gem_info.nil?
             api_result.push(gem_info_parsed) unless gem_info_parsed.nil?
