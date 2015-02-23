@@ -1,12 +1,10 @@
-- Add hyper link paste field or you can make it where you paste the hyper link in the same field, and it parses 
-whether or not it's rubygems or if it's a github hyperlink, or github or the other one. 
- 	- add class that grabs the gemfile, 
- 	- call existing methods
-
 - Write tests
 - Refactor 
-- Create gem
-  - method that looks up the information about a gem
-  - console menu type interface to mouse through gems installed and get more infos
+
 - Write short readme
+
+- Stretch
+	- Create gem
+  		- method that looks up the information about a gem
+  		- console menu type interface to mouse through gems installed and get more infos
 
