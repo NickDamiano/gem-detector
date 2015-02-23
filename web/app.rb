@@ -5,9 +5,8 @@ require_relative '../lib/gemfile_lookup.rb'
 set :bind, '0.0.0.0' #vagrant stuff
 
 post '/gemfile' do 
-  gems = params['gemfile']
+  gems = GemfileLookup::GithubCheck.run(params['gemfile'])
   result = GemfileLookup::Parse.run(gems)
-  p result
   api_return = GemfileLookup::RubyGemsCall.run(result[:gem_list])
   commented_api_return = GemfileLookup::RubyGemsCall.run(result[:commented_gems])
   erb :result, :locals => {gemlist: api_return[:result], commented_gems: commented_api_return[:result]}

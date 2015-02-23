@@ -1,4 +1,3 @@
-- Prevent duplicate gems from being called
 - Add hyper link paste field or you can make it where you paste the hyper link in the same field, and it parses 
 whether or not it's rubygems or if it's a github hyperlink, or github or the other one. 
  	- add class that grabs the gemfile, 
