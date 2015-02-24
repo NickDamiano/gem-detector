@@ -1,3 +1,4 @@
+- Add gem version into the application
 - Write tests
 - Refactor 
 

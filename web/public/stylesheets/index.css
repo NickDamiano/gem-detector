@@ -6,7 +6,7 @@ textarea{
 	margin-top:1em;
 	padding:1em;
 }
-a{
+.title a{
 	text-decoration: none;
 	color: black;
 	font-family: Verdana;
@@ -20,6 +20,14 @@ label{
 h1{
 	text-align: center;
 	font-family: Verdana;
+}
+
+a{
+	text-decoration: none;
+}
+
+.gem_links{
+	color: blue;
 }
 
 .gem_container{

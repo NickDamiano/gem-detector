@@ -7,6 +7,8 @@ module GemfileLookup
       parsed_file.each do |line|
         if line.lstrip.start_with?('Gem', 'gem', 'GEM')
           gem_and_version =  line.lstrip[4..-1].split(',')
+          p gem_and_version[1]
+          p 'version above'
           gem_name = gem_and_version[0]
           result.push(gem_name.to_s) unless gem_name.empty?
         end
