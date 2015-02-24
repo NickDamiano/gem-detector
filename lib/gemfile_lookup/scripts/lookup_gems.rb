@@ -26,7 +26,13 @@ module GemfileLookup
       thread_list.each { |thread| thread.join }
       api_result = api_result.sort_by { |item| item["name"] }
       api_result = api_result.uniq
+      api_result.each { |gem_name| gem_name['downloads'] = convertWithCommas(gem_name['downloads'])}
+      api_result
       return { success?: true, result: api_result }
+    end
+
+    def self.convertWithCommas(number)
+      number.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
     end
   end
 end
