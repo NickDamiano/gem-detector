@@ -17,7 +17,6 @@
 		</div>
 		<div class='gem_links'>
 			<a href=<%= gem_name['homepage_uri'] %>>Homepage</a> | 
-			<a href=<%= gem_name['source_code_uri'] %>>Source Code</a>
 		</div>
 	</div>
 	<% end %>
@@ -29,11 +28,6 @@
 	<h3 class='commented_title'><%= commented_gems_title %></h3>
 	<% commented_gems.each do |gem_name| %>
 	<div class='gem_info commented_gem'>
-		<% if gem_name['source_code_uri'].nil? %>
-			<% source_code = '' %>
-		<% else %>
-			<% source_code = 'Source Code'
-		<% end %>
 		<div class='commented_gem_name'> 
 			<strong>Name:</strong> <%= gem_name['name'].capitalize %>
 		</div>
@@ -45,7 +39,6 @@
 		</div>
 		<div class='gem_links'>
 			<a href=<%= gem_name['homepage_uri'] %>>Homepage</a> |
-			<a href=<%= gem_name['source_code_uri'] %>>Source Code</a>
 		</div>
 	</div>
 	<% end %>
