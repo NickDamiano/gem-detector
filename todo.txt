@@ -1,11 +1,20 @@
-- Add gem version into the application
-- Write tests
-- Refactor 
 
-- Write short readme
+Tuesday
+- Write short readme 45 minutes
+- Write tests 90 minutes
+	- checks for gems that don't exist
+	- checks for gems that do exist
+	- checks for commented gems
+	- checks for gems via github link
+	- checks for gems via gemfile paste
+	- should i use vcr again?
+- Refactor 30 minutes
 
 - Stretch
 	- Create gem
   		- method that looks up the information about a gem
   		- console menu type interface to mouse through gems installed and get more infos
+	- Add gem version to factor in how popular that gem version is versus the other downloads, also dependencies
+	- Figure out if there are inline git requests for a different source other than rubygems and get the description from there. 
+
 
