@@ -32,7 +32,6 @@ Some of the things I learned while working on this project were:
   and views. 
 
 #### Future Plans
-* Write tests
 * The current code captures the version number associated with each gem. I would like to pass that back in the return hash
 and get specific information about that version to be displayed on the results page.
 * Right now I am only looking up information about the gem on rubygems.org. I would like to add the ability to parse inline
