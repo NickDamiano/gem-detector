@@ -5,7 +5,7 @@ module GemfileLookup
       commented_gems = []
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
       parsed_file.each do |line|
-        if line.lstrip.start_with?('Gem', 'gem', 'GEM')
+        if line.lstrip.start_with?('Gem ', 'gem ', 'GEM ')
           gem_and_version =  line.lstrip[4..-1].split(',')
           p gem_and_version[1]
           p 'version above'
