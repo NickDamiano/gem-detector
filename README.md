@@ -32,12 +32,8 @@ Some of the things I learned while working on this project were:
   and views. 
 
 #### Future Plans
-* Write tests
-* The current code captures the version number associated with each gem. I would like to pass that back in the return hash
-and get specific information about that version to be displayed on the results page.
 * Right now I am only looking up information about the gem on rubygems.org. I would like to add the ability to parse inline
 references to github for specific gems to look up the gem information there. 
-* Add something that allows the user to expand out and read the gem dependencies of each gem on the results page. 
 * Create a gem that allows someone to lookup gem information in the console using a lookup method. 
  - Possibly have a command line menu that would let someone list out all of the gems on their system, arrow down to the gem
  they want to, hit enter, and read the information about the gem and its dependencies. 
