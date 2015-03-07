@@ -35,5 +35,4 @@ Some of the things I learned while working on this project were:
 * Right now I am only looking up information about the gem on rubygems.org. I would like to add the ability to parse inline
 references to github for specific gems to look up the gem information there. 
 * Create a gem that allows someone to lookup gem information in the console using a lookup method. 
- - Possibly have a command line menu that would let someone list out all of the gems on their system, arrow down to the gem
- they want to, hit enter, and read the information about the gem and its dependencies. 
+ - Creates a gemfile-info.md file they can read through.
