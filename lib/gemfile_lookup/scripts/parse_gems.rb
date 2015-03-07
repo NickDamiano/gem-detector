@@ -7,14 +7,13 @@ module GemfileLookup
       parsed_file.each do |line|
         if line.lstrip.start_with?('Gem ', 'gem ', 'GEM ')
           gem_and_version =  line.lstrip[4..-1].split(',')
-          p gem_and_version[1]
-          p 'version above'
+
           gem_name = gem_and_version[0]
           result.push(gem_name.to_s) unless gem_name.empty?
         end
 
         line = line.lstrip.downcase
-        if line =~ /#\s*gem/
+        if line =~ /#\s*gem\s/
           #get rid of the # and then strip any white space. then start the index from 1
           line = line[1..-1].lstrip
           gem_and_version =  line[4..-1].split(',')
