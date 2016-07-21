@@ -4,6 +4,8 @@ module GemfileLookup
       result = []
       commented_gems = []
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
+      puts parsed_file
+      puts "parsed file above yall"
       parsed_file.each do |line|
         if line.lstrip.start_with?('Gem ', 'gem ', 'GEM ')
           # splits the gem name from anything that follows it
