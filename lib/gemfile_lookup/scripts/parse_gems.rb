@@ -16,7 +16,7 @@ module GemfileLookup
           p gem_name
 
           # pushes the gem into the array of gems
-          result.push(gem_name.to_s) unless gem_name.empty?
+          result.push(gem_name.to_s) unless gem_name.nil? || gem_name.empty?
         end
 
         line = line.lstrip.downcase
