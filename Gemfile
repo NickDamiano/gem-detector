@@ -1,8 +1,10 @@
 source 'https://rubygems.org/'
 
-gem 'sinatra'
+gem 'sinatra', '~>1.4.7'
+
+
 
 group :development do 
-  gem 'pry-byebug'
   gem 'sinatra-contrib', require: 'sinatra/reloader'
+  gem 'pry-byebug'
 end
