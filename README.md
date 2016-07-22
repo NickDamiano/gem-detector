@@ -24,8 +24,8 @@ Some of the things I learned while working on this project were:
  I wrapped my existing api call code block with the creation of new threads, pushed them into an array, and joined
  all the threads by iterating through the array and calling .join at the end. This reduced my api processing time from 
  30 seconds to 1 - 2 seconds. A year later, rubygems.org set stricter limits on api calls which broke the app. I separated
- the api call into a method I could loop through until it received a good response. This extended out the length of time to 
- 5 - 8 seconds. 
+ the api call into a method I could loop through until it received a good response. This extended out the load time a bit more - 
+ now it's at roughly .1 seconds per gem lookup. Rails gem has about 55 gems in it and takes roughly 6 seconds.  
 * Others
   - I also practiced with adding different styles, setting a css class variable depending on the content of the gem title. 
   - I created a helper method to take the number of downloads and convert it to a string with commas in the appropriate
