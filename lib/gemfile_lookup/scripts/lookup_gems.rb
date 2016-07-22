@@ -12,7 +12,6 @@ module GemfileLookup
       thread_list = []
       gem_info = 429
       gem_info_parsed = nil
-      puts "GEM_LIST ISSSS   #{gem_list}"
       gem_list.each do |gem_name|
         thread_list << Thread.new do 
           # call the method to get the gem data
@@ -45,7 +44,6 @@ module GemfileLookup
     def self.call_api(gem_name)
       begin
         gem_info = open("https://rubygems.org/api/v1/gems/#{gem_name}.json").read
-        puts "gem info is: #{gem_info}"
       rescue OpenURI::HTTPError => e 
         return Integer(e.io.status[0])
       end
