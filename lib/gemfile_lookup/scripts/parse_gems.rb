@@ -7,18 +7,15 @@ module GemfileLookup
       parsed_file.each do |line|
         if line.lstrip.downcase.start_with?('gem ')
           # splits the gem name from anything that follows it
-          gem_and_version =  line.lstrip[4..-1].split(',')
-          gem_name = gem_and_version[0].split(/\'|\"/)[1]
+          gem_name = parse_out_gemname(line)
           # pushes the gem into the array of gems
           result.push(gem_name) unless gem_name.nil? || gem_name.empty?
         end
 
         line = line.lstrip.downcase
         if line =~ /#\s*gem\s/
-          #get rid of the # and then strip any white space. then start the index from 1
           line = line[1..-1].lstrip
-          gem_and_version =  line[4..-1].split(',')
-          gem_name = gem_and_version[0].split(/\'|\"/)[1]
+          gem_name = parse_out_gemname(line)
           commented_gems.push(gem_name) unless gem_name.empty?
         end
       end
@@ -30,6 +27,13 @@ module GemfileLookup
       else
         return { success?: true, gem_list: result, commented_gems: commented_gems }
       end
+    end
+
+    # version is parsed in case we want to add future upgrade that gets current dependencies 
+    #  based off of version. I know, I know. YAGNI...
+    def self.parse_out_gemname(line)
+      gem_and_version =  line[4..-1].split(',')
+      gem_name = gem_and_version[0].split(/\'|\"/)[1]
     end
   end
 end
