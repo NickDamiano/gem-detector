@@ -1,6 +1,6 @@
 require 'open-uri'
-require 'json'
-# require "resolv-replace.rb"
+# require 'json'
+require "resolv-replace.rb"
 
 
 # GithubCheck looks for a line containing the github repo address, if it finds it, it grabs the text from 

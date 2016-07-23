@@ -1,12 +1,11 @@
 module GemfileLookup
   class Parse
     def self.run(source_file)
-      puts "source file is #{source_file}"
       result = []
       commented_gems = []
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
       parsed_file.each do |line|
-        if line.lstrip.start_with?('Gem ', 'gem ', 'GEM ')
+        if line.lstrip.downcase.start_with?('gem')
           # splits the gem name from anything that follows it
           gem_and_version =  line.lstrip[4..-1].split(',')
           gem_name = gem_and_version[0].split(/\'|\"/)[1]
