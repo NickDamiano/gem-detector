@@ -20,8 +20,6 @@ module GemfileLookup
         end
       end
 
-      result = result.map{ |gemname| gemname }
-
       if result.size == 0
         return { success?: false, gem_list: [], commented_gems: [] }
       else
