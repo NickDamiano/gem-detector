@@ -10,10 +10,6 @@ post '/gemfile' do
   erb :result, :locals => {gemlist: api_return[:result], commented_gems: commented_api_return[:result]}
 end
 
-get '/gemfile' do 
-  
-end
-
 get '/' do 
   erb :index
 end
