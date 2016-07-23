@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'json'
 require "resolv-replace.rb"
+require 'pry-byebug'
 
 #gets an array of hashes with gem name and version number or possibly just a sub array. 
 #returns an array of hashes with all of the different information about each gem
@@ -33,8 +34,7 @@ module GemfileLookup
       api_result = api_result.sort_by { |item| item["name"] }
       api_result = api_result.uniq
       api_result.each { |gem_name| gem_name['downloads'] = convertWithCommas(gem_name['downloads'])}
-      api_result
-      return { success?: true, result: api_result }
+      { success?: true, result: api_result }
     end
 
     def self.convertWithCommas(number)
