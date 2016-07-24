@@ -33,7 +33,7 @@ module GemfileLookup
       api_result = api_result.sort_by { |item| item["name"] }
       api_result = api_result.uniq
       api_result.each { |gem_name| gem_name['downloads'] = convertWithCommas(gem_name['downloads'])}
-      { success?: true, result: api_result }
+      api_result
     end
 
     def self.convertWithCommas(number)

@@ -16,14 +16,14 @@ module GemfileLookup
         if line =~ /#\s*gem\s/
           line = line[1..-1].lstrip
           gem_name = parse_out_gemname(line)
-          commented_gems.push(gem_name) unless gem_name.empty?
+          commented_gems.push(gem_name) unless gem_name.nil? || gem_name.empty?
         end
       end
 
       if result.size == 0
-        return { success?: false, gem_list: [], commented_gems: [] }
+        return { gem_list: [], commented_gems: [] }
       else
-        return { success?: true, gem_list: result, commented_gems: commented_gems }
+        return { gem_list: result, commented_gems: commented_gems }
       end
     end
 
