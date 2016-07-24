@@ -5,14 +5,14 @@ module GemfileLookup
       commented_gems = []
       parsed_file = source_file.gsub(/\r/, '').split(/\n/)
       parsed_file.each do |line|
-        if line.lstrip.downcase.start_with?('gem ')
+        line = line.lstrip.downcase
+        if line.start_with?('gem ')
           # splits the gem name from anything that follows it
           gem_name = parse_out_gemname(line)
           # pushes the gem into the array of gems
           result.push(gem_name) unless gem_name.nil? || gem_name.empty?
         end
 
-        line = line.lstrip.downcase
         if line =~ /#\s*gem\s/
           line = line[1..-1].lstrip
           gem_name = parse_out_gemname(line)
